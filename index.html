@@ -261,6 +261,12 @@
     .work-card:nth-child(2) h3 { font-size: clamp(24px, 2.7vw, 34px); }
     .work-caption { display: flex; justify-content: space-between; align-items: center; }
     .work-arrow { color: var(--lime); font-size: 20px; }
+    .video-feature { margin-top: 55px; }
+    .video-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .video-heading h3 { margin: 12px 0 0; font: 500 clamp(24px, 3vw, 36px)/1.1 var(--display); letter-spacing: -.055em; }
+    .video-heading a { color: #41433a; font-size: 12px; text-underline-offset: 4px; }
+    .video-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #171a16; }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
     .approach { padding: 115px 0 125px; }
     .approach-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 9%; }
@@ -318,7 +324,7 @@
     .contact-detail a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
 
     .site-footer { padding: 25px 0; }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px 24px; }
     .footer-inner .brand { font-size: 12px; }
     .footer-note, .footer-top, .footer-social { color: var(--muted); font: 10px var(--mono); letter-spacing: .04em; }
     .footer-top, .footer-social { text-decoration: none; }
@@ -352,6 +358,8 @@
       .work { padding: 75px 0 85px; }
       .work-grid { grid-template-columns: 1fr; }
       .work-card, .work-card.featured { min-height: 390px; }
+      .video-feature { margin-top: 40px; }
+      .video-heading { align-items: flex-start; flex-direction: column; }
       .approach { padding: 82px 0 90px; }
       .contact { padding: 75px 0 78px; }
       .contact-grid { align-items: flex-start; flex-direction: column; }
@@ -479,6 +487,24 @@
             </div>
           </article>
         </div>
+        <div class="video-feature">
+          <div class="video-heading">
+            <div>
+              <span class="eyebrow">From our YouTube channel</span>
+              <h3>A little more Lucid</h3>
+            </div>
+            <a href="https://www.youtube.com/@LucidDreamWorksAI" target="_blank" rel="noopener noreferrer">Visit our YouTube channel ↗</a>
+          </div>
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/F1oZ60mYnk4?si=4O2XqzQ1JBgcI6IH"
+              title="Lucid Dreamworks video"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -526,6 +552,8 @@
       </a>
       <span class="footer-note">Made of ideas, pixels &amp; possibility.</span>
       <a class="footer-social" href="https://www.instagram.com/luciddreamworks.ai/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a>
+      <a class="footer-social" href="https://www.youtube.com/@LucidDreamWorksAI" target="_blank" rel="noopener noreferrer">YOUTUBE ↗</a>
+      <a class="footer-social" href="https://www.linkedin.com/company/lucid-dreamworks-ai" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a>
       <a class="footer-top" href="#">BACK TO TOP ↑</a>
     </div>
   </footer>
