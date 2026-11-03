@@ -1,1 +1,532 @@
-Hello
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11110f">
+  <meta name="description" content="Lucid Dreamworks is an independent creative studio shaping the next generation of AI-powered advertising, visual effects and short films.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lucid Dreamworks — Make room for wonder">
+  <meta property="og:description" content="AI-powered advertising, visual effects and short films for worlds yet to come.">
+  <meta property="og:url" content="https://luciddreamworks.in/">
+  <title>Lucid Dreamworks — Make room for wonder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #11110f;
+      --paper: #eeede7;
+      --muted: #9c9b93;
+      --lime: #d4ff62;
+      --line: rgba(238, 237, 231, .16);
+      --mono: "DM Mono", monospace;
+      --sans: "DM Sans", sans-serif;
+      --display: "Manrope", sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    body::after {
+      position: fixed;
+      z-index: 5;
+      pointer-events: none;
+      inset: 0;
+      content: "";
+      opacity: .13;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 2px solid var(--lime); outline-offset: 5px; }
+    .wrap { width: min(1320px, calc(100% - 96px)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--muted);
+      font: 11px var(--mono);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); content: ""; }
+
+    .site-header {
+      position: absolute;
+      z-index: 10;
+      inset: 0 0 auto;
+      border-bottom: 1px solid rgba(238, 237, 231, .12);
+    }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font: 700 15px var(--display);
+      letter-spacing: -.04em;
+    }
+    .brand-mark {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      border: 1px solid rgba(212, 255, 98, .55);
+      border-radius: 50%;
+      color: var(--lime);
+      font: 13px var(--mono);
+    }
+    .nav-links { display: flex; align-items: center; gap: 35px; }
+    .nav-links a {
+      color: #c5c4bc;
+      font-size: 12px;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--lime); }
+    .nav-links .nav-cta { color: var(--paper); }
+    .nav-cta span { padding-left: 7px; color: var(--lime); }
+
+    .hero {
+      position: relative;
+      display: flex;
+      min-height: 770px;
+      align-items: center;
+      overflow: hidden;
+      isolation: isolate;
+      background: #171a16;
+    }
+    .hero::before {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(17, 17, 15, .93) 0%, rgba(17, 17, 15, .76) 42%, rgba(17, 17, 15, .13) 100%),
+        linear-gradient(0deg, var(--ink) 0%, transparent 33%),
+        url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=2200&q=85") center 48% / cover;
+    }
+    .hero::after {
+      position: absolute;
+      z-index: -1;
+      top: 16%;
+      right: 12%;
+      width: min(38vw, 500px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle at 34% 34%, rgba(224, 255, 166, .76), rgba(169, 211, 121, .25) 27%, rgba(147, 177, 115, .08) 49%, transparent 68%);
+      filter: blur(1px);
+      content: "";
+      opacity: .8;
+      mix-blend-mode: screen;
+    }
+    .hero-inner { position: relative; z-index: 1; padding: 150px 0 110px; }
+    .hero-copy { max-width: 760px; }
+    .hero .eyebrow { margin-bottom: 28px; color: #d0d0c8; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 780px;
+      margin-bottom: 27px;
+      font: 500 clamp(62px, 9.2vw, 126px)/.91 var(--display);
+      letter-spacing: -.09em;
+    }
+    h1 em { color: var(--lime); font-style: normal; }
+    .hero-copy > p {
+      max-width: 450px;
+      margin-bottom: 35px;
+      color: #cfcec7;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding: 0 19px;
+      border: 1px solid var(--lime);
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: transparent; color: var(--lime); }
+    .button .arrow { font-size: 17px; font-weight: 400; }
+    .hero-note {
+      position: absolute;
+      right: 0;
+      bottom: 115px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #d0d0c8;
+      font: 10px var(--mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+    }
+    .hero-note::before { width: 1px; height: 42px; background: var(--lime); content: ""; }
+
+    .intro { padding: 116px 0 126px; }
+    .intro-grid { display: grid; grid-template-columns: .75fr 1.4fr; gap: 8%; }
+    .intro .eyebrow { margin-top: 12px; }
+    .intro h2 {
+      max-width: 850px;
+      margin-bottom: 29px;
+      font: 500 clamp(32px, 5vw, 61px)/1.12 var(--display);
+      letter-spacing: -.065em;
+    }
+    .intro h2 span { color: #8d8d85; }
+    .intro-copy p { max-width: 560px; margin-bottom: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+
+    .services { padding: 86px 0 100px; border-top: 1px solid var(--line); }
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+    .section-heading h2 {
+      margin: 15px 0 0;
+      font: 500 clamp(38px, 6vw, 68px)/1 var(--display);
+      letter-spacing: -.075em;
+    }
+    .section-heading > p { max-width: 280px; margin: 0 0 4px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+    .service {
+      min-height: 250px;
+      padding: 25px 28px 25px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .service + .service { padding-left: 28px; border-left: 1px solid var(--line); }
+    .service-index { color: var(--lime); font: 11px var(--mono); }
+    .service h3 { margin: 47px 0 12px; font: 500 23px var(--display); letter-spacing: -.045em; }
+    .service p { max-width: 310px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+
+    .work { padding: 93px 0 125px; background: #e8e7df; color: var(--ink); }
+    .work .eyebrow { color: #686961; }
+    .work .section-heading { margin-bottom: 42px; }
+    .work .section-heading > p { color: #686961; }
+    .work-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 20px; }
+    .work-card {
+      position: relative;
+      min-height: 430px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      isolation: isolate;
+      background: #3b473b;
+      color: var(--paper);
+      text-decoration: none;
+    }
+    .work-card::before {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      background: var(--image) center / cover;
+      content: "";
+      transition: transform .6s cubic-bezier(.2, .7, .2, 1);
+    }
+    .work-card::after {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(10, 12, 10, .83), transparent 70%);
+      content: "";
+    }
+    .work-card:hover::before { transform: scale(1.045); }
+    .work-card.featured { min-height: 520px; }
+    .work-card-content { width: 100%; padding: 28px; }
+    .work-tag { color: var(--lime); font: 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .work-card h3 { margin: 11px 0 7px; font: 500 clamp(25px, 3.2vw, 40px)/1.08 var(--display); letter-spacing: -.06em; }
+    .work-card p { margin: 0; color: #d0d0ca; font-size: 12px; }
+    .work-card:nth-child(2) h3 { font-size: clamp(24px, 2.7vw, 34px); }
+    .work-caption { display: flex; justify-content: space-between; align-items: center; }
+    .work-arrow { color: var(--lime); font-size: 20px; }
+
+    .approach { padding: 115px 0 125px; }
+    .approach-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 9%; }
+    .approach-intro h2 {
+      max-width: 410px;
+      margin: 20px 0 23px;
+      font: 500 clamp(39px, 5.5vw, 65px)/1.03 var(--display);
+      letter-spacing: -.075em;
+    }
+    .approach-intro p { max-width: 360px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .steps { border-top: 1px solid var(--line); }
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 20px;
+      padding: 23px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .step-index { padding-top: 4px; color: var(--lime); font: 11px var(--mono); }
+    .step h3 { margin: 0 0 7px; font: 500 19px var(--display); }
+    .step p { max-width: 520px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+    .contact {
+      position: relative;
+      padding: 95px 0 100px;
+      overflow: hidden;
+      background: var(--lime);
+      color: var(--ink);
+    }
+    .contact::after {
+      position: absolute;
+      top: -190px;
+      right: -80px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(17, 17, 15, .16);
+      border-radius: 50%;
+      box-shadow: 0 0 0 50px rgba(17, 17, 15, .035), 0 0 0 100px rgba(17, 17, 15, .025), 0 0 0 150px rgba(17, 17, 15, .02);
+      content: "";
+    }
+    .contact .wrap { position: relative; z-index: 1; }
+    .contact .eyebrow { color: #3c4626; }
+    .contact .eyebrow::before { background: var(--ink); }
+    .contact-grid { display: flex; align-items: flex-end; justify-content: space-between; gap: 35px; }
+    .contact h2 {
+      max-width: 730px;
+      margin: 20px 0 0;
+      font: 500 clamp(50px, 8vw, 95px)/.94 var(--display);
+      letter-spacing: -.085em;
+    }
+    .contact .button { flex: 0 0 auto; border-color: var(--ink); background: var(--ink); color: var(--paper); }
+    .contact .button:hover { background: transparent; color: var(--ink); }
+    .contact .button .arrow { color: var(--lime); }
+    .contact-detail { margin: 31px 0 0; color: #3c4626; font-size: 13px; }
+    .contact-detail a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
+
+    .site-footer { padding: 25px 0; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-inner .brand { font-size: 12px; }
+    .footer-note, .footer-top, .footer-social { color: var(--muted); font: 10px var(--mono); letter-spacing: .04em; }
+    .footer-top, .footer-social { text-decoration: none; }
+    .footer-top:hover, .footer-social:hover { color: var(--lime); }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 44px, 600px); }
+      .nav { min-height: 70px; }
+      .nav-links { gap: 15px; }
+      .nav-links a { font-size: 11px; }
+      .nav-links a:nth-child(2) { display: none; }
+      .hero { min-height: 700px; }
+      .hero::before {
+        background:
+          linear-gradient(90deg, rgba(17, 17, 15, .88), rgba(17, 17, 15, .35)),
+          linear-gradient(0deg, var(--ink), transparent 50%),
+          url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=80") 56% center / cover;
+      }
+      .hero::after { top: 26%; right: -17%; width: 75vw; opacity: .55; }
+      .hero-inner { padding: 135px 0 95px; }
+      h1 { font-size: clamp(59px, 15vw, 95px); }
+      .hero-note { right: 0; bottom: 75px; font-size: 9px; }
+      .intro { padding: 82px 0 90px; }
+      .intro-grid, .approach-grid { grid-template-columns: 1fr; gap: 35px; }
+      .section-heading { align-items: flex-start; flex-direction: column; gap: 16px; }
+      .section-heading > p { max-width: 380px; }
+      .services { padding: 70px 0 80px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service, .service + .service { min-height: 0; padding: 23px 0; border-left: 0; }
+      .service h3 { margin: 22px 0 7px; }
+      .work { padding: 75px 0 85px; }
+      .work-grid { grid-template-columns: 1fr; }
+      .work-card, .work-card.featured { min-height: 390px; }
+      .approach { padding: 82px 0 90px; }
+      .contact { padding: 75px 0 78px; }
+      .contact-grid { align-items: flex-start; flex-direction: column; }
+      .contact .button { margin-top: 2px; }
+      .contact::after { top: -100px; right: -300px; }
+    }
+    @media (max-width: 430px) {
+      .wrap { width: calc(100% - 36px); }
+      .brand { gap: 8px; font-size: 13px; }
+      .brand-mark { width: 27px; height: 27px; }
+      .nav-links { gap: 12px; }
+      .nav-links a:nth-child(1) { display: none; }
+      .hero { min-height: 660px; }
+      .hero-copy > p { max-width: 330px; font-size: 14px; }
+      .hero-note { display: none; }
+      .work-card, .work-card.featured { min-height: 340px; }
+      .work-card-content { padding: 22px; }
+      .footer-note { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#" aria-label="Lucid Dreamworks home">
+        <span class="brand-mark" aria-hidden="true">L</span>
+        <span>Lucid Dreamworks</span>
+      </a>
+      <div class="nav-links">
+        <a href="#studio">Studio</a>
+        <a href="#services">What we do</a>
+        <a href="#work">Our worlds</a>
+        <a class="nav-cta" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner wrap">
+        <div class="hero-copy">
+          <span class="eyebrow">Independent creative studio</span>
+          <h1 id="hero-title">Make room<br>for <em>wonder.</em></h1>
+          <p>We turn bold ideas into cinematic realities — with AI, artistry and a healthy disregard for the ordinary.</p>
+          <a class="button" href="#work">Step into our worlds <span class="arrow" aria-hidden="true">↘</span></a>
+        </div>
+        <div class="hero-note">Imagination, in motion</div>
+      </div>
+    </section>
+
+    <section class="intro wrap" id="studio" aria-labelledby="intro-title">
+      <div class="intro-grid">
+        <div><span class="eyebrow">The lucid point of view</span></div>
+        <div class="intro-copy">
+          <h2 id="intro-title">The future of visual storytelling is <span>anything but ordinary.</span></h2>
+          <p>Lucid Dreamworks is a creative studio for ideas that deserve to be seen differently. We bring human imagination and emerging tools together to make striking films, images and experiences — from the first flicker of an idea to the final frame.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">What we make</span>
+            <h2 id="services-title">Big ideas. Moving images.</h2>
+          </div>
+          <p>One creative partner, from the first spark to the final delivery.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service">
+            <span class="service-index">01 / ADVERTISING</span>
+            <h3>AI-powered campaigns</h3>
+            <p>Distinctive campaign worlds, product films and social-first stories built to make people look twice.</p>
+          </article>
+          <article class="service">
+            <span class="service-index">02 / VISUAL EFFECTS</span>
+            <h3>VFX &amp; virtual worlds</h3>
+            <p>Seamless visual effects and immersive environments that make the unbelievable feel real.</p>
+          </article>
+          <article class="service">
+            <span class="service-index">03 / FILM</span>
+            <h3>Short films</h3>
+            <p>Original, cinematic stories with a point of view — made for screens big, small and yet to come.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">A glimpse beyond</span>
+            <h2 id="work-title">Worlds worth wandering into.</h2>
+          </div>
+          <p>Every frame starts somewhere unexpected. Here’s a taste of the places we love to explore.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card featured" style="--image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=85')">
+            <div class="work-card-content">
+              <span class="work-tag">A world in the making</span>
+              <div class="work-caption">
+                <div>
+                  <h3>Somewhere, beyond the familiar</h3>
+                  <p>Worldbuilding · Generative visuals</p>
+                </div>
+                <span class="work-arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+          </article>
+          <article class="work-card" style="--image: url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1000&q=85')">
+            <div class="work-card-content">
+              <span class="work-tag">An imagined frame</span>
+              <div class="work-caption">
+                <div>
+                  <h3>After the last light</h3>
+                  <p>Atmosphere · Moving image</p>
+                </div>
+                <span class="work-arrow" aria-hidden="true">↗</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" aria-labelledby="approach-title">
+      <div class="approach-grid wrap">
+        <div class="approach-intro">
+          <span class="eyebrow">How we get there</span>
+          <h2 id="approach-title">Curiosity first. Craft always.</h2>
+          <p>New tools are only as good as the thinking behind them. We bring a considered, hands-on approach to every collaboration.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="step-index">01</span>
+            <div><h3>Find the feeling</h3><p>We listen, ask better questions and get to the heart of what your story needs to say.</p></div>
+          </article>
+          <article class="step">
+            <span class="step-index">02</span>
+            <div><h3>Imagine what's possible</h3><p>We shape the creative direction, explore visual worlds and find the right mix of tools for the idea.</p></div>
+          </article>
+          <article class="step">
+            <span class="step-index">03</span>
+            <div><h3>Make it unforgettable</h3><p>We refine every detail, collaborate closely and deliver work made to stay with you.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <span class="eyebrow">The next frame is yours</span>
+        <div class="contact-grid">
+          <h2 id="contact-title">Got a world<br>in mind?</h2>
+          <a class="button" href="mailto:luciddreamworks.ai@gmail.com">Let's make it real <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <p class="contact-detail">For ideas, collaborations and everything in between: <a href="mailto:luciddreamworks.ai@gmail.com">luciddreamworks.ai@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner wrap">
+      <a class="brand" href="#" aria-label="Lucid Dreamworks, back to top">
+        <span class="brand-mark" aria-hidden="true">L</span>
+        <span>Lucid Dreamworks</span>
+      </a>
+      <span class="footer-note">Made of ideas, pixels &amp; possibility.</span>
+      <a class="footer-social" href="https://www.instagram.com/luciddreamworks.ai/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a>
+      <a class="footer-top" href="#">BACK TO TOP ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
